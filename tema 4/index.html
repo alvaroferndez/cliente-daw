@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Eventos</title>
+      <script>
+            window.addEventListener("load",() =>{
+            cuerpo = document.body
+
+            //cuerpo.addEventListener("click", () => {alert("hecho")});
+
+            //cuerpo.addEventListener("mousemove", (e) => {console.log(e.clientX)})
+
+            td = document.getElementsByTagName("td")
+            tr = document.getElementsByTagName("tr")
+            tabla = document.getElementsByTagName("table")
+            imagen = document.getElementsByTagName("img")
+
+            for (i=0;i<td.length;i++){
+                  td[i].addEventListener("mousemove", (e) => {
+                        if(e.ctrlKey){
+                              e.target.style.backgroundColor = "blue"
+                        }else if(e.shiftKey){
+                              e.target.style.backgroundColor = "red"
+                        }else if(e.altKey){
+                              e.target.style.backgroundColor = "white"
+                        }
+                  })
+            }
+
+            for (element of tabla){
+                  element.addEventListener("click", (e) => {
+                        for (i=0;i<td.length;i++){
+                              td[i].style.backgroundColor = "white"
+                        }
+                  })
+            }
+
+            // for (i=0;i<tr.length;i++){
+            //       tr[i].addEventListener("click", (e) => {
+            //             e.target.remove(i)
+            //       })
+            // }
+            // for (element of tabla){
+            //       element.addEventListener("click", (e) => {
+            //             e.target.remove(i)
+            //       })
+            // }
+
+            imagen.onmousedown = function(e) {
+            imagen.style.position = 'absolute';
+            imagen.style.zIndex = 1000;
+
+            document.body.append(imagen);
+
+            function moveAt(pageX, pageY) {
+            imagen.style.left = pageX - imagen.offsetWidth / 2 + 'px';
+            imagen.style.top = pageY - imagen.offsetHeight / 2 + 'px';
+            }
+
+            moveAt(event.pageX, event.pageY);
+
+            function onMouseMove(e) {
+            moveAt(event.pageX, event.pageY);
+            }
+
+            document.addEventListener('mousemove', onMouseMove);
+
+            imagen.onmouseup = function() {
+            document.removeEventListener('mousemove', onMouseMove);
+            imagen.onmouseup = null;
+            };
+
+            };
+            imagen.ondragstart = function() {
+                  return false;
+            };
+
+      })
+      </script>
+</head>
+<body>
+      <h1>ds</h1>
+      <table border="1">
+            <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+            </tr>
+            <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+            </tr>
+            <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+            </tr>
+            <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+            </tr>
+            <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+            </tr>
+            <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+            </tr>
+            <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+            </tr>
+            <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+            </tr>
+            <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+            </tr>
+            <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+            </tr>
+      </table>
+      <img src="https://picsum.photos/id/237/200/300" alt="a">
+</body>
+</html>

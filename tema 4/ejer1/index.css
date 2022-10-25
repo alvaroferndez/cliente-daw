@@ -1,0 +1,11 @@
+.enlace{
+      color: rgb(80, 80, 255);
+      text-decoration: underline;
+}
+#normal{
+      display: none;
+}
+body{
+      display: flex;
+      flex-direction: row;
+}
