@@ -1,0 +1,44 @@
+body{
+      background-color: #EF767A;
+      text-align: center;
+}
+
+form{
+      margin-top: 150px;
+}
+
+#nombre{
+      text-align: center;
+      background-color: #EF767A;
+      border: none;
+      color: #F6A896;
+      font-size: 25px;
+      border-bottom: 2px white solid;
+}
+
+div{
+      text-align: initial;
+      margin-left: 43%;
+}
+
+li{
+      font-size: 20px;
+      color: white;
+}
+
+a{
+      font-size: 20px;
+      color: #F7BA9E;
+}
+
+#submit{
+      border: none;
+      border-radius: 5px;
+      font-size: 15px;
+      padding-left: 30px;
+      padding-right: 30px;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      background-color: #F6A896;
+      color: #EF767A;
+}
