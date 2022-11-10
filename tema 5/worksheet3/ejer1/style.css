@@ -1,0 +1,16 @@
+*{
+      background-color: #FEA600;
+      text-align: center;
+      align-items: center;
+      color: white;
+      font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+button{
+      border: white 1px solid;
+      width: 100px;
+      height: 50px;
+      margin: 20px;
+      border-radius: 10px;
+}
+

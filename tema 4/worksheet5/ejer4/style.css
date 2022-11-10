@@ -39,7 +39,7 @@ h1{
 
 .input:nth-child(odd){
       padding-right: 70px;
-}
+}s
 
 input{
       border: solid rgba(128, 128, 128, 0.519) 1px;

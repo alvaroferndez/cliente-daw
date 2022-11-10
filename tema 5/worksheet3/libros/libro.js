@@ -1,5 +1,4 @@
- 
-class ListaLibros{
+ class ListaLibros{
 
     constructor(){
         this.libros = []
@@ -64,3 +63,5 @@ class Libro{
         this.fecha = new Date()
     }
 }
+
+export {ListaLibros,Libro}
