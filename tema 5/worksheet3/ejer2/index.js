@@ -1,5 +1,5 @@
 window.addEventListener("load", () => {
-      body = document.body;
+      seccion = document.getElementsByTagName("section")[0];
       divs = document.getElementsByClassName("letra");
       solucion = document.getElementById("solucion");
 
@@ -60,7 +60,10 @@ window.addEventListener("load", () => {
                         span = document.createElement("span");
                         span.innerHTML = "has ganado!"
                         span.style.color = "green"
-                        body.appendChild(span);
+                        seccion.appendChild(span);
+                        for (div of divs){
+                              div.removeEventListener("click",buscarLetra);
+                        }
                   }
             }
       }
