@@ -9,14 +9,18 @@
             window.addEventListener("load",() =>{
             cuerpo = document.body
 
-            //cuerpo.addEventListener("click", () => {alert("hecho")});
+            //onclick
+            cuerpo.onclick = function(){alert("hecho")};
 
-            //cuerpo.addEventListener("mousemove", (e) => {console.log(e.clientX)})
+            //posicion del raton
+            cuerpo.addEventListener("mousemove", (e) => {console.log(e.clientX)})
 
+
+            //tabla
             td = document.getElementsByTagName("td")
             tr = document.getElementsByTagName("tr")
             tabla = document.getElementsByTagName("table")
-            imagen = document.getElementsByTagName("img")
+            imagen = document.getElementsByTagName("img");
 
             for (i=0;i<td.length;i++){
                   td[i].addEventListener("mousemove", (e) => {
@@ -38,44 +42,34 @@
                   })
             }
 
-            // for (i=0;i<tr.length;i++){
-            //       tr[i].addEventListener("click", (e) => {
-            //             e.target.remove(i)
-            //       })
-            // }
-            // for (element of tabla){
-            //       element.addEventListener("click", (e) => {
-            //             e.target.remove(i)
-            //       })
-            // }
+            //imagenes
+            for(let i=0; i<imagen.length; i++){
+            imagen[i].onmousedown = function(event) {
+                  imagen[i].style.position = 'absolute';
+                  imagen[i].style.zIndex = 1000;
 
-            imagen.onmousedown = function(e) {
-            imagen.style.position = 'absolute';
-            imagen.style.zIndex = 1000;
+                  function moveAt(pageX, pageY) {
+                  imagen[i].style.left = pageX - imagen[i].offsetWidth / 2 + 'px';
+                  imagen[i].style.top = pageY - imagen[i].offsetHeight / 2 + 'px';
+                  }
 
-            document.body.append(imagen);
+                  moveAt(event.pageX, event.pageY);
 
-            function moveAt(pageX, pageY) {
-            imagen.style.left = pageX - imagen.offsetWidth / 2 + 'px';
-            imagen.style.top = pageY - imagen.offsetHeight / 2 + 'px';
+                  function onMouseMove(event) {
+                  moveAt(event.pageX, event.pageY);
+                  }
+
+                  document.addEventListener('mousemove', onMouseMove);
+
+                  imagen[i].onmouseup = function() {
+                  document.removeEventListener('mousemove', onMouseMove);
+                  imagen[i].onmouseup = null;
+                  };
+
+                  imagen[i].ondragstart = function() {
+                        return false;
+                  };
             }
-
-            moveAt(event.pageX, event.pageY);
-
-            function onMouseMove(e) {
-            moveAt(event.pageX, event.pageY);
-            }
-
-            document.addEventListener('mousemove', onMouseMove);
-
-            imagen.onmouseup = function() {
-            document.removeEventListener('mousemove', onMouseMove);
-            imagen.onmouseup = null;
-            };
-
-            };
-            imagen.ondragstart = function() {
-                  return false;
             };
 
       })
@@ -206,5 +200,7 @@
             </tr>
       </table>
       <img src="https://picsum.photos/id/237/200/300" alt="a">
+      <img src="https://picsum.photos/id/237/200/200" alt="b">
+      <img src="https://picsum.photos/id/237/300/300" alt="c">
 </body>
 </html>
