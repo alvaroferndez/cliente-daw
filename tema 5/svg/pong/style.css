@@ -1,0 +1,15 @@
+body{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+}
+
+section{
+      margin-top:10%;
+      height: 80%;
+}
+
+div{
+      margin-bottom: 10%;
+}
